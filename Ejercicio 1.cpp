@@ -29,19 +29,17 @@ int main() {
     std::cin >> salario;
 
     if (edad >= EDAD_MINIMA) {
+        std::cout << nombre << " es mayor de edad" << std::endl;
+
         if (salario > LIMITE_SALARIO_ALTO) {
-            std::cout << nombre << " es mayor de edad" << std::endl;
             std::cout << "Tiene un salario alto" << std::endl;
-            std::cout << "Salario con bono: "
-                      << salario + calcularBono(salario)
-                      << std::endl;
         } else {
-            std::cout << nombre << " es mayor de edad" << std::endl;
             std::cout << "Tiene un salario bajo" << std::endl;
-            std::cout << "Salario con bono: "
-                      << salario + calcularBono(salario)
-                      << std::endl;
         }
+
+        std::cout << "Salario con bono: "
+                  << salario + calcularBono(salario)
+                  << std::endl;
     } else {
         std::cout << nombre << " es menor de edad" << std::endl;
         std::cout << "No puede recibir bono" << std::endl;
