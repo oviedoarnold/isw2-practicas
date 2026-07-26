@@ -22,6 +22,34 @@ void mostrarCategoria(double salario) {
     }
 }
 
+void mostrarInformacion(
+    const std::string& nombre,
+    int edad,
+    double salario
+) {
+    if (edad < EDAD_MINIMA) {
+        std::cout << nombre << " es menor de edad" << std::endl;
+        std::cout << "No puede recibir bono" << std::endl;
+
+        mostrarCategoria(salario);
+        return;
+    }
+
+    std::cout << nombre << " es mayor de edad" << std::endl;
+
+    if (salario > LIMITE_SALARIO_ALTO) {
+        std::cout << "Tiene un salario alto" << std::endl;
+    } else {
+        std::cout << "Tiene un salario bajo" << std::endl;
+    }
+
+    std::cout << "Salario con bono: "
+              << salario + calcularBono(salario)
+              << std::endl;
+
+    mostrarCategoria(salario);
+}
+
 int main() {
     std::string nombre;
     int edad;
@@ -36,24 +64,7 @@ int main() {
     std::cout << "Salario: ";
     std::cin >> salario;
 
-    if (edad >= EDAD_MINIMA) {
-        std::cout << nombre << " es mayor de edad" << std::endl;
-
-        if (salario > LIMITE_SALARIO_ALTO) {
-            std::cout << "Tiene un salario alto" << std::endl;
-        } else {
-            std::cout << "Tiene un salario bajo" << std::endl;
-        }
-
-        std::cout << "Salario con bono: "
-                  << salario + calcularBono(salario)
-                  << std::endl;
-    } else {
-        std::cout << nombre << " es menor de edad" << std::endl;
-        std::cout << "No puede recibir bono" << std::endl;
-    }
-
-    mostrarCategoria(salario);
+    mostrarInformacion(nombre, edad, salario);
 
     return 0;
 }
