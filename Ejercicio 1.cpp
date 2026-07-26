@@ -6,7 +6,7 @@ int main() {
     int edad;
     double salario;
 
-    std::cout << "Nombre: ";
+    std::cout << "Nombre: "; 
     std::cin >> nombre;
 
     std::cout << "Edad: ";
