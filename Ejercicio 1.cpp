@@ -1,41 +1,41 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 int main() {
-    string n;
-    int e;
-    double s;
+    std::string nombre;
+    int edad;
+    double salario;
 
-    cout << "Nombre: ";
-    cin >> n;
+    std::cout << "Nombre: ";
+    std::cin >> nombre;
 
-    cout << "Edad: ";
-    cin >> e;
+    std::cout << "Edad: ";
+    std::cin >> edad;
 
-    cout << "Salario: ";
-    cin >> s;
+    std::cout << "Salario: ";
+    std::cin >> salario;
 
-    if (e >= 18) {
-        if (s > 15000) {
-            cout << n << " es mayor de edad" << endl;
-            cout << "Tiene un salario alto" << endl;
-            cout << "Salario con bono: " << s + (s * 0.10) << endl;
+    if (edad >= 18) {
+        if (salario > 15000) {
+            std::cout << nombre << " es mayor de edad" << std::endl;
+            std::cout << "Tiene un salario alto" << std::endl;
+            std::cout << "Salario con bono: "
+                      << salario + (salario * 0.10) << std::endl;
         } else {
-            cout << n << " es mayor de edad" << endl;
-            cout << "Tiene un salario bajo" << endl;
-            cout << "Salario con bono: " << s + (s * 0.05) << endl;
+            std::cout << nombre << " es mayor de edad" << std::endl;
+            std::cout << "Tiene un salario bajo" << std::endl;
+            std::cout << "Salario con bono: "
+                      << salario + (salario * 0.05) << std::endl;
         }
     } else {
-        cout << n << " es menor de edad" << endl;
-        cout << "No puede recibir bono" << endl;
+        std::cout << nombre << " es menor de edad" << std::endl;
+        std::cout << "No puede recibir bono" << std::endl;
     }
 
-    if (s > 15000) {
-        cout << "Categoría: A" << endl;
+    if (salario > 15000) {
+        std::cout << "Categoría: A" << std::endl;
     } else {
-        cout << "Categoría: B" << endl;
+        std::cout << "Categoría: B" << std::endl;
     }
 
     return 0;
