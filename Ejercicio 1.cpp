@@ -6,6 +6,14 @@ const double LIMITE_SALARIO_ALTO = 15000.0;
 const double BONO_SALARIO_ALTO = 0.10;
 const double BONO_SALARIO_BAJO = 0.05;
 
+double calcularBono(double salario) {
+    if (salario > LIMITE_SALARIO_ALTO) {
+        return salario * BONO_SALARIO_ALTO;
+    }
+
+    return salario * BONO_SALARIO_BAJO;
+}
+
 int main() {
     std::string nombre;
     int edad;
@@ -25,13 +33,13 @@ int main() {
             std::cout << nombre << " es mayor de edad" << std::endl;
             std::cout << "Tiene un salario alto" << std::endl;
             std::cout << "Salario con bono: "
-                      << salario + (salario * BONO_SALARIO_ALTO)
+                      << salario + calcularBono(salario)
                       << std::endl;
         } else {
             std::cout << nombre << " es mayor de edad" << std::endl;
             std::cout << "Tiene un salario bajo" << std::endl;
             std::cout << "Salario con bono: "
-                      << salario + (salario * BONO_SALARIO_BAJO)
+                      << salario + calcularBono(salario)
                       << std::endl;
         }
     } else {
