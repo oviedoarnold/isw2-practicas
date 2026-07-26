@@ -14,6 +14,14 @@ double calcularBono(double salario) {
     return salario * BONO_SALARIO_BAJO;
 }
 
+void mostrarCategoria(double salario) {
+    if (salario > LIMITE_SALARIO_ALTO) {
+        std::cout << "Categoria: A" << std::endl;
+    } else {
+        std::cout << "Categoria: B" << std::endl;
+    }
+}
+
 int main() {
     std::string nombre;
     int edad;
@@ -45,11 +53,7 @@ int main() {
         std::cout << "No puede recibir bono" << std::endl;
     }
 
-    if (salario > LIMITE_SALARIO_ALTO) {
-        std::cout << "Categoria: A" << std::endl;
-    } else {
-        std::cout << "Categoria: B" << std::endl;
-    }
+    mostrarCategoria(salario);
 
     return 0;
 }
