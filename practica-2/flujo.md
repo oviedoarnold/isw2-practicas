@@ -30,5 +30,5 @@ También facilita la integración continua y el trabajo colaborativo del equipo.
 
 
 
-
+En conclusión, trunk-based se adapta mejor a proyectos web con entregas continuas.
 
